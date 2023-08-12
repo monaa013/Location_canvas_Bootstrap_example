@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            var text = "Hey Peeps";
+            var fontSize = 30;
+            ctx.font = fontSize + "px Georgia";
+
+            var textWidth = ctx.measureText(text).width;
+            var canvasWidth = c.width;
+            var canvasHeight = c.height;
+
+            var x = (canvasWidth - textWidth) / 2;
+            var y = (canvasHeight + fontSize) / 2;
+
+            // Change text color
+            ctx.fillStyle = "blue"; // Set the color to blue
+
+            ctx.fillText(text, x, y); // Use fillText instead of strokeText for filled text
+        });
+    </script>
+
+    <title>Getting Latitude and Longitude</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Canva.css">
+    <title>Music Festivel</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <header>
+
+        <h1>Christ Deemed to be University</h1>
+        <p>MCA & MSc AI&ML</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#More">More</a></li>
+            <li><a href="#Location">Location</a></li>
+        </ul>
+    </nav>
+
+    <div class="canvas" >
+    <canvas  id="myCanvas" width="400" height="80"></canvas>
+    </div>
+    <section id="Home">
+        
+        <h2>Talent Show</h2>
+        <p><em>" Unleash Your Brilliance: Where Dreams Take the Stage! "</em><br><strong>Talent Show 2023:</strong>
+            First year PG students of Computer Science Department showcases diverse
+            talents and captivates the community with vibrant performances. Experience the Magic of
+            Talent: Dazzling performances, diverse skills, and unforgettable moments await. Be part of
+            this incredible celebration of creativity and talent!</p>
+        <h2>Department of Computer Science</h2>
+        <p>The Department of Computer Science of CHRIST (Deemed to be University) strives to shape
+            outstanding computer professionals with ethical and human values to reshape the nation's
+            destiny. The training imparted aims to prepare young minds for the challenging opportunities
+            in the IT industry with a global awareness rooted in the Indian </p>
+
+        <div class="mission">
+
+            <div>
+                <p>
+                    <b>VISION</b><br />
+                    The Department of Computer Science endeavors to imbibe the vision of the
+                    University “Excellence and Service”. The department is committed to this philosophy
+                    which pervades every aspect and functioning of the department.
+                </p>
+            </div>
+
+
+            <div>
+                <p>
+                    <b>MISSION</b><br />
+                    “To develop IT professionals with ethical and human values”. To accomplish our mission,
+                    the department encourages students to apply their acquired knowledge and skills towards
+                    professional achievements in their careers. The department also molds the students to
+                    be socially responsible and ethically sound
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="More">
+        <h2>More Info</h2>
+           <div class="event1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Timing</h5>
+                                <p class="card-text">Timing:3pm<br>
+                                    Date:18/08/2023<br>
+                                    Venue:Room No:911-Central Block,Bangalore Central Campus</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Events</h5>
+                                <p class="card-text"><li>Singing(classical,western,solo,group)</li>
+                                    <li>Dancing(classical,western,solo,group)</li>
+                                    <li>Acts</li>
+                                    <li>Painting</li>
+                                    <li>Open mic</li>
+                                    <li>Videography</li>
+                                    <li>Photographer</li>
+                                    <li>Poster Making</li>
+                                    <li>Emceeing</li></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Rules</h5>
+                                <p class="card-text"><li>Registration must be done using Christ official mail id.</li>
+                                    <li>Team can be formed consist of five people maximum.</li>
+                                    <li>Team members of a team can belong to different class.</li>
+                                    <li>An individual or team can pre-shoot their performance and share the video.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Include Bootstrap JS (optional) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </section>
+
+        <section id="contact">
+            <h2>For any queries contact us:</h2>
+            <p>Vansh - 9*******9 - I MCA 'A'<br>
+                Rishita - 9********8 - I MCA 'A'<br>
+                Rajendran - 7********2 - I MCA 'B'<br>
+                Ancy - 7********8 - I MCA 'B'<br>
+                Raghav - 9********9 - I Msc. AI & ML<br>
+                Shilpee - 9********4 - I Msc. AI & ML</p>
+        </section>
+
+        <div id="Location"
+        class="Location">
+            <main>
+                <p>Time Stamp: <span id="timestamp"></span></p>
+                <p>Latitude : <span id="lat"></span></p>
+                <p>Longitude: <span id="long"></span></p>
+                <p>Lat/Long in Meters: <span id="accuracy"></span></p>
+    
+                <div id="errorArea" class="alert d-none">
+                </div>
+                <a href="https://www.openstreetmap.org/#map=18/12.9320627/77.6128779">Map</a>
+    
+    
+            </main>
+        
+        <script>
+            'use strict';
+            window.onload = function () {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(displayPosition, locationerror);
+                }
+                else {
+                    displayError("Plaease Update your browser with Geolocation");
+                }
+            };
+            function displayPosition(pos) {
+                document.getElementById("timestamp").innerText = new Date(pos.timestamp);
+                document.getElementById("lat").innerText = pos.coords.latitude;
+                document.getElementById("long").innerText = pos.coords.longitude;
+                document.getElementById("accuracy").innerText = pos.coords.accuracy;
+            }
+
+            function locationerror(error) {
+                let msg = "";
+                console.log("error.message = " + error.message);
+                switch (error.code) {
+                    case error.PERMISSION_DENIED:
+                        msg = "User Doesn't want to share his/her Location";
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        msg = " Can't determine user's position";
+                        break;
+                    case error.TIMEOUT:
+                        msg = "The response is out of Time";
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        msg = "Unknown Error Occured";
+                        break;
+                }
+                displayError(msg);
+
+
+            }
+            function displayError(msg) {
+                let elem = document.getElementById("errorArea");
+                elem.classList.remove("d-none");
+                elem.innerHTML = msg;
+            }
+        </script>
+    </div>
+    <footer>
+        <p>&copy; 2023 Priya Dharshini. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

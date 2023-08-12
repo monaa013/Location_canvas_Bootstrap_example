@@ -1,0 +1,71 @@
+
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 2rem;
+    padding: 0;
+}
+
+.canvas{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* Style the header */
+header {
+    background-color: purple;
+    color: black;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Style the navigation menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: palevioletred;
+    padding: 1rem;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Style the sections */
+section {
+    padding: 7px;
+}
+/* Style the portfolio projects */
+.project {
+    margin-bottom: 2rem;
+}
+
+.project img {
+    max-width: 100%;
+}
+/* Style the location*/
+.Location{
+    margin-bottom: 2rem;
+}
+
+/* Style the footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #666;
+    color: #fff;
+}
+
+
+.mission{
+    display: flex;
+}
+.card-body{
+    background-color: palevioletred;
+}
